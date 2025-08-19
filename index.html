@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Interactive Image Slider</h1>
+        
+        <!-- Slideshow container -->
+        <div class="slideshow-container">
+            <!-- Full-width images with captions -->
+            <div class="slide fade">
+                <div class="numbertext">1 / 5</div>
+                <img src="./assets/_1d51e85a-6247-490e-8198-97181de1c028.jpg" alt="Nature">
+                <div class="caption">Beautiful Nature</div>
+            </div>
+
+            <div class="slide fade">
+                <div class="numbertext">2 / 5</div>
+                <img src="./assets/_5d2f6001-4cca-4348-8745-7c397e5f82d5.jpg" alt="City">
+                <div class="caption">Urban Landscape</div>
+            </div>
+
+            <div class="slide fade">
+                <div class="numbertext">3 / 5</div>
+                <img src="./assets/_5f7609bf-f44d-46a9-ad84-f9d6a6b38920.jpeg" alt="Beach">
+                <div class="caption">Relaxing Beach</div>
+            </div>
+            
+            <div class="slide fade">
+                <div class="numbertext">4 / 5</div>
+                <img src="./assets/_7f60fdb0-bf5c-411f-97a9-2b98ff6d82f6.jpg" alt="Mountains">
+                <div class="caption">Majestic Mountains</div>
+            </div>
+            
+            <div class="slide fade">
+                <div class="numbertext">5 / 5</div>
+                <img src="./assets/_8f8f7bf7-a54e-41c8-ab89-d78e520f5fb7.jpg" alt="Forest">
+                <div class="caption">Enchanting Forest</div>
+            </div>
+
+            <!-- Next and previous buttons -->
+            <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+            <a class="next" onclick="changeSlide(1)">&#10095;</a>
+        </div>
+
+        <!-- The dots/circles for navigation -->
+        <div class="dots-container">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+        </div>
+        <!-- Add before controls section -->
+        <div class="upload-section">
+          <input type="file" id="imageUpload" accept="image/*" multiple style="display: none;">
+          <button onclick="document.getElementById('imageUpload').click()" class="upload-btn">
+            📤 Upload Images
+            </button>
+            <span id="uploadStatus"></span>
+        </div>
+
+        
+        <!-- Controls for autoplay -->
+        <div class="controls">
+            <button id="autoplay" onclick="toggleAutoplay()">Start Autoplay</button>
+            <div class="speed-control">
+                <label for="interval">Transition Speed (seconds):</label>
+                <input type="range" id="interval" min="1" max="10" value="3" onchange="updateInterval()">
+                <span id="interval-value">3s</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
